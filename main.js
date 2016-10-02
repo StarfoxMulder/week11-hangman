@@ -40,18 +40,23 @@ function playGame() {
 		inquirer.prompt([
 			{
 				type: "input",
-				message: "\nTo begin guessing, type a singler letter and hit 'Enter'.",
+				message: "\nTo enter a guess, type a singler letter and hit 'Enter'.",
 				name: "userGuess"
 			}
 		]).then(function(userInput) {
 			//Check where the letter appears in the word
 			// return an array with index of all letters which should be revealed
 			var resultLetterCheck = letterCheck(userInput);
-			var dispLetGuessMsg = 
+			var dispLetGuessMsg = updateWord.disp_Let_Guess_Msg;
 			var resultWordUpdate = updateWord(resultLetterCheck);
 			var DisCurWordProg = updateWord.dCWP;
 
 			// var letterForWord = letterCheck.checkedLetter[0];
+			console.log("You have uncovered "+dispLetGuessMsg+" new letters in this word \n"+
+				"\n Your current progress:   "+DisCurWordProg);
 
-		})
-	}
+			prompt();
+			});
+
+		};
+	};

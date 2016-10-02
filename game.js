@@ -5,6 +5,8 @@ var letterCheck = require("./letter.js");
 var updateWord = require("./word.js");
 var fs = require('fs');
 
+console.log("game.js is connected.");
+
 var gameWords = [
 		{
 			word: "IMAGINATION",
@@ -28,7 +30,12 @@ var gameWords = [
 		}
 	];
 
-var indexWord = Math.floor(Math.random()*gameWords.length)+1;
+getWord();
+
+function getWord() {
+	var indexWord = Math.floor(Math.random()*gameWords.length)+1;
+	var 
+}
 
 exports.randomWord = new RandomWord({
 	rand_word: gameWords[indexWord].word,

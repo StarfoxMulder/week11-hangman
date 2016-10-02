@@ -17,9 +17,11 @@ module.exports = function(userInput) {
 	console.log("letter.js module.exports is connected.");
 	return {
 		checked: function() {
+			pushCount = 0;
 			for(var i = 0; i < currentWord.length; i++){
 				if(userInput == currentWord.charAt[i]) {
 					currLetArray.push(i);
+					pushCount++;
 				}
 			}
 			return currLetArray;
@@ -29,5 +31,6 @@ module.exports = function(userInput) {
 
 
 exports.checkedLetter = new checkedLetter ({
-	Curr_let_array: currLetArray,
+	curr_let_array: currLetArray,
+	disp_Let_Guess_Msg: pushCount,
 });
