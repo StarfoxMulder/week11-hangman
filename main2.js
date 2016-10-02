@@ -1,8 +1,8 @@
 // This file will contain the logic of the app; running it in the terminal will start the game
 var inquirer = require('inquirer');
-var randWord = require("./game.js");
-var letterCheck = require("./letter.js");
-var updateWord = require("./word.js");
+var randWord = require("./game2.js");
+var letterCheck = require("./letter2.js");
+var updateWord = require("./word2.js");
 var fs = require('fs');
 var playerName = "";
 

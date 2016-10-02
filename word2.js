@@ -1,9 +1,9 @@
 // This file will contain all of the methods which will check the letters guessed versus the random word selected
 // This is a constructor file
 var inquirer = require('inquirer');
-var randWord = require("./game.js");
-var letterCheck = require("./letter.js");
-var updateWord = require("./word.js");
+var randWord = require("./game2.js");
+var letterCheck = require("./letter2.js");
+var updateWord = require("./word2.js");
 var fs = require('fs');
 
 // randWord.randomWord[0].rand_word;
