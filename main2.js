@@ -7,13 +7,11 @@ var fs = require('fs');
 var playerName = "";
 
 initializeGame();
-
+// var userGuess = process.argv[0].toUpperCase();
 
 
 
 function initializeGame() {
-	var userGuess = process.argv[0].toUpperCase();
-
 	inquirer.prompt([{
 		name: "name",
 		message: "Enter your name to play Hangman!"
@@ -21,13 +19,15 @@ function initializeGame() {
 		var playerName = answers.name;
 		playGame();
 	})
-}
+};
 
 function playGame() {
-	fullWord = randWord.randomWord;
-	placeholder = randWord.randomWord[1];
-
-
+	//srsly tho - *how* do exports work? 
+	//Are they returning an object, array, or string?
+	wI = Math.floor(Math.random()*gameWords.length)+1;
+	wordIndex = wI;
+	fullWord = randWord.getWord(wordIndex);
+	placeholder = randWord.getDefault(wordIndex);
 
 	console.log("Welcome "+playerName+"!\n");
 	console.log("\nThe word you are guessing has "+fullWord.length+" letters.");
@@ -47,9 +47,9 @@ function playGame() {
 			//Check where the letter appears in the word
 			// return an array with index of all letters which should be revealed
 			var resultLetterCheck = letterCheck(userInput);
-			var dispLetGuessMsg = updateWord.disp_Let_Guess_Msg;
+			var dispLetGuessMsg = updateWord.pushCount;
 			var resultWordUpdate = updateWord(resultLetterCheck);
-			var DisCurWordProg = updateWord.dCWP;
+			var DisCurWordProg = updateWord.displayWordProg;
 
 			// var letterForWord = letterCheck.checkedLetter[0];
 			console.log("You have uncovered "+dispLetGuessMsg+" new letters in this word \n"+

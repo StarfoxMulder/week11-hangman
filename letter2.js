@@ -10,27 +10,31 @@ var fs = require('fs');
 var currentWord = randWord.randomWord.rand_word;
 var currentDefault = randWord.randomWord.rand_default;
 var currLetArray = [];
+var pushCount = 0;
 //currLetArray = array of indecies for where the location of the user's
 //  letter within the current wor
 
 module.exports = function(userInput) {
 	console.log("letter.js module.exports is connected.");
-	return {
-		checked: function() {
-			pushCount = 0;
-			for(var i = 0; i < currentWord.length; i++){
-				if(userInput == currentWord.charAt[i]) {
-					currLetArray.push(i);
-					pushCount++;
-				}
+	// this.userInput = userInput;
+
+	checked: function() {
+		for(var i = 0; i < currentWord.length; i++){
+			if(userInput == currentWord.charAt[i]) {
+				currLetArray.push(i);
 			}
-			return currLetArray;
 		}
+		return currLetArray;
+	},
+	count: function() {
+
+	}
 	};
 };
 
 
-exports.checkedLetter = new checkedLetter ({
-	curr_let_array: currLetArray,
-	disp_Let_Guess_Msg: pushCount,
-});
+
+// exports.checkedLetter = new checkedLetter ({
+// 	curr_let_array: currLetArray,
+// 	disp_Let_Guess_Msg: pushCount,
+// });

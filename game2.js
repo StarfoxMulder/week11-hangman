@@ -30,16 +30,19 @@ var gameWords = [
 		}
 	];
 
-getWord();
+// var indexWord = 0;
 
-function getWord() {
-	var indexWord = Math.floor(Math.random()*gameWords.length)+1;
-	var randWord = gameWords[indexWord].word;
-	var randDefault = gameWords[indexWord].default;
-}
+// function index() {
+// 	indexWord = Math.floor(Math.random()*gameWords.length)+1;
+// };
 
-exports.randomWord = new RandomWord({
-	rand_word: randWord,
-	rand_default: randDefault,
-});
-
+module.exports = {
+	getWord: function(wordIndex) {
+		// this.wordIndex = wordIndex;
+		var randWord = gameWords[wordIndex].word;
+	},
+	getDefault: function(wordIndex) {
+		// this.wordIndex = wordIndex;
+		var randDefault = gameWords[wordIndex].default;
+	}
+};
